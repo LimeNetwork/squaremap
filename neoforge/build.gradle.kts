@@ -21,7 +21,7 @@ neoForge {
     }
     configureEach {
       loadedMods.set(emptySet())
-      runProps(layout).forEach { (key, value) ->
+      runProps(layout, providers).forEach { (key, value) ->
         systemProperty(key, value)
       }
     }
