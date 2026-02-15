@@ -16,7 +16,9 @@ indra {
 }
 
 repositories {
-  mavenCentral()
+  mavenCentral {
+    mavenContent { releasesOnly() }
+  }
   maven("https://repo.jpenilla.xyz/snapshots/") {
     mavenContent {
       includeModule("org.incendo", "cloud-sponge")
@@ -24,8 +26,9 @@ repositories {
       snapshotsOnly()
     }
   }
-  sonatype.s01Snapshots()
-  sonatype.ossSnapshots()
+  maven("https://central.sonatype.com/repository/maven-snapshots/") {
+    mavenContent { snapshotsOnly() }
+  }
   maven("https://repo.papermc.io/repository/maven-public/")
   maven("https://cursemaven.com") {
     content {
